@@ -1,0 +1,71 @@
+/* 模型悬浮提示框样式 */
+.model-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.model-tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+/* 默认上方箭头 */
+.model-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* 显示在下方的提示框样式 */
+.tooltip-bottom {
+    bottom: auto;
+    top: 125%;
+}
+
+/* 下方箭头 */
+.tooltip-bottom::after {
+    top: auto;
+    bottom: 100%;
+    border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+}
+
+.model-card:hover .model-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 思考模式的样式 */
+.thinking-container {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #666;
+    border-left: 3px solid #4285f4;
+}
+
+.thinking-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4285f4;
+} 
